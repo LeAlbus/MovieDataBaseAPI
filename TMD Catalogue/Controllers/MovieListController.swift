@@ -33,13 +33,16 @@ class MovieListController: UITableViewController{
         let cell: MovieCell = self.tableView.dequeueReusableCell(withIdentifier: "movieCell") as! MovieCell
         
         if !currentMovies.isEmpty{
-            let description = currentMovies[indexPath.row].overview
             
+            let movieForCell = currentMovies[indexPath.row]
             
-            let index = description.index(description.startIndex, offsetBy: 105)
-            let shortDescription = description.prefix(upTo: index)
-          
-            cell.movieDescriptionLabel.text = String(shortDescription)
+            let description = movieForCell.overview
+            let year = movieForCell.releaseDate.prefix(4)
+            let rating = movieForCell.rating
+            
+            cell.movieDescriptionLabel.text = String(description)
+            cell.yearLabel.text = String(year)
+            cell.ratingLabel.text = String(rating)
         }
         return cell
     }

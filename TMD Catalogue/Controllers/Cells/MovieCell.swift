@@ -12,6 +12,8 @@ import UIKit
 class MovieCell: UITableViewCell{
     
     
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var movieDescriptionLabel: UILabel!
     
     func setMovieDescription(_ description: String){
