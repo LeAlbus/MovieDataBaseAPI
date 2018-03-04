@@ -22,11 +22,11 @@
 		A036AE12204B56E700EA34CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036ADDB204B328600EA34CF /* Info.plist */; };
 		A036AE17204B993300EA34CF /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE16204B993300EA34CF /* GenreCell.swift */; };
 		A036AE19204B994600EA34CF /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE18204B994600EA34CF /* MovieCell.swift */; };
-		A036AE1F204BA79800EA34CF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE1E204BA79800EA34CF /* Movie.swift */; };
 		A036AE21204BB06400EA34CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE20204BB06400EA34CF /* Constants.swift */; };
-		A036AE23204BB51C00EA34CF /* MovieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE22204BB51C00EA34CF /* MovieCollection.swift */; };
 		A036AE25204BBBA300EA34CF /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE24204BBBA300EA34CF /* MovieList.swift */; };
 		A036AE28204BBBCB00EA34CF /* Decodables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE27204BBBCB00EA34CF /* Decodables.swift */; };
+		A036AE2A204C50BE00EA34CF /* TMDBTalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE29204C50BE00EA34CF /* TMDBTalker.swift */; };
+		A036AE2C204C570100EA34CF /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE2B204C570100EA34CF /* MovieListController.swift */; };
 		B061C8719D41CB7172CE272C /* Pods_TMD_CatalogueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A47D84CA9FBE2DE3D598E3E /* Pods_TMD_CatalogueTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,11 +70,11 @@
 		A036AE10204B4C6100EA34CF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A036AE16204B993300EA34CF /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		A036AE18204B994600EA34CF /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		A036AE1E204BA79800EA34CF /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A036AE20204BB06400EA34CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A036AE22204BB51C00EA34CF /* MovieCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollection.swift; sourceTree = "<group>"; };
 		A036AE24204BBBA300EA34CF /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		A036AE27204BBBCB00EA34CF /* Decodables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodables.swift; sourceTree = "<group>"; };
+		A036AE29204C50BE00EA34CF /* TMDBTalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTalker.swift; sourceTree = "<group>"; };
+		A036AE2B204C570100EA34CF /* MovieListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListController.swift; sourceTree = "<group>"; };
 		A04745FA77A9834567552201 /* Pods-TMD CatalogueUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMD CatalogueUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMD CatalogueUITests/Pods-TMD CatalogueUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A418C88FC75136EB244401BA /* Pods-TMD Catalogue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMD Catalogue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMD Catalogue/Pods-TMD Catalogue.debug.xcconfig"; sourceTree = "<group>"; };
 		A78DE684CB276FE4924EFA3E /* Pods_TMD_Catalogue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMD_Catalogue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +170,7 @@
 				A036AE0A204B4C0800EA34CF /* MovieListViewController.swift */,
 				A036AE0D204B4C1D00EA34CF /* MovieDetailViewController.swift */,
 				A036AE10204B4C6100EA34CF /* TabBarController.swift */,
-				A036AE22204BB51C00EA34CF /* MovieCollection.swift */,
+				A036AE2B204C570100EA34CF /* MovieListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,7 +178,6 @@
 		A036AE06204B4B7700EA34CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A036AE1E204BA79800EA34CF /* Movie.swift */,
 				A036AE24204BBBA300EA34CF /* MovieList.swift */,
 			);
 			path = Models;
@@ -208,6 +207,7 @@
 		A036AE1D204BA70400EA34CF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A036AE29204C50BE00EA34CF /* TMDBTalker.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -540,15 +540,15 @@
 			files = (
 				A036AE19204B994600EA34CF /* MovieCell.swift in Sources */,
 				A036AE28204BBBCB00EA34CF /* Decodables.swift in Sources */,
+				A036AE2A204C50BE00EA34CF /* TMDBTalker.swift in Sources */,
 				A036AE0B204B4C0800EA34CF /* MovieListViewController.swift in Sources */,
 				A036AE04204B4B3B00EA34CF /* GenreViewController.swift in Sources */,
 				A036AE0E204B4C1D00EA34CF /* MovieDetailViewController.swift in Sources */,
 				A036AE17204B993300EA34CF /* GenreCell.swift in Sources */,
 				A036AE25204BBBA300EA34CF /* MovieList.swift in Sources */,
 				A036AE11204B4C6100EA34CF /* TabBarController.swift in Sources */,
-				A036AE1F204BA79800EA34CF /* Movie.swift in Sources */,
 				A036ADCE204B328600EA34CF /* AppDelegate.swift in Sources */,
-				A036AE23204BB51C00EA34CF /* MovieCollection.swift in Sources */,
+				A036AE2C204C570100EA34CF /* MovieListController.swift in Sources */,
 				A036AE21204BB06400EA34CF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

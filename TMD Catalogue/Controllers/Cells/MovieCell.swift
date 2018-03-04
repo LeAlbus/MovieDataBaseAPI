@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+class MovieCell: UITableViewCell{
+    
+    
+    @IBOutlet weak var movieDescriptionLabel: UILabel!
+    
+    func setMovieDescription(_ description: String){
+
+        
+       
+    }
+}
