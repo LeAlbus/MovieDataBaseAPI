@@ -12,5 +12,9 @@ import UIKit
 class TabBarController: UITabBar {
     
     
+    @IBAction func showGeners(_ sender: Any) {
+        
+        print ("touch")
+    }
     
 }

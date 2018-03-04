@@ -18,7 +18,7 @@ class TMDBTalker{
         
         isGettingData = true
 
-        Alamofire.request("\(baseURL+popular)", parameters: ["api_key": apiKey, "page": resultPage]).responseJSON { response in
+        Alamofire.request("\(baseMovieURL+popular)", parameters: ["api_key": apiKey, "page": resultPage]).responseJSON { response in
             switch response.result {
             case .success:
                 do{
@@ -48,10 +48,36 @@ class TMDBTalker{
     
     }
     
-//    func requestGenreList(successHandler: @escaping (_ successObject: BaseListResponse?) -> ()){
-//
-//
-//    }
+    func requestGenreList(successHandler: @escaping (_ successObject: [Genre]?) -> ()){
+
+        Alamofire.request("\(baseURL+genreList)", parameters: ["api_key": apiKey]).responseJSON { response in
+            switch response.result {
+            case .success:
+                do{
+                    
+                    let data = response.data
+                    
+                    let genreList = try JSONDecoder().decode(GenreList.self, from: data!)
+                    
+                    successHandler(genreList.genres)
+                    self.isGettingData = false
+                    
+                } catch let error{
+                    print ("Error while parsing response")
+                    print(error)
+                    successHandler(nil)
+                    self.isGettingData = false
+                    
+                }
+            case .failure(_):
+                print ("Failed to get movie list from url")
+                successHandler(nil)
+                self.isGettingData = false
+                
+            }
+            
+        }
+    }
     
     
 }

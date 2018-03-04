@@ -1,5 +1,5 @@
 //
-//  GenreCell.swift
+//  NavBarController.swift
 //  TMD Catalogue
 //
 //  Created by Pedro Lopes on 04/03/18.
@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class GenreCell: UITableViewCell{
+class NavBarController: UINavigationBar{
     
-    var id: Int = -1
-    @IBOutlet weak var genreName: UILabel!
+    
+    
 }

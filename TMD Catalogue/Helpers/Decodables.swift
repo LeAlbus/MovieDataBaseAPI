@@ -25,6 +25,26 @@ struct Movie: Decodable{
     }
 }
 
+struct GenreList: Decodable{
+    
+    let genres: [Genre]
+
+    private enum CodingKeys: String, CodingKey{
+        case genres = "genres"
+    }
+}
+
+struct Genre: Decodable{
+    
+    let id: Int
+    let name: String
+    
+    private enum CodingKeys: String, CodingKey{
+        case id = "id"
+        case name = "name"
+    }
+}
+
 struct BaseListResponse: Decodable{
     
     let page: Int
