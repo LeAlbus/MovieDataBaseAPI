@@ -27,6 +27,7 @@
 		A036AE28204BBBCB00EA34CF /* Decodables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE27204BBBCB00EA34CF /* Decodables.swift */; };
 		A036AE2A204C50BE00EA34CF /* TMDBTalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE29204C50BE00EA34CF /* TMDBTalker.swift */; };
 		A036AE2C204C570100EA34CF /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE2B204C570100EA34CF /* MovieListController.swift */; };
+		A036AE31204C84BE00EA34CF /* poster-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A036AE30204C84BE00EA34CF /* poster-placeholder.png */; };
 		B061C8719D41CB7172CE272C /* Pods_TMD_CatalogueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A47D84CA9FBE2DE3D598E3E /* Pods_TMD_CatalogueTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		A036AE27204BBBCB00EA34CF /* Decodables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodables.swift; sourceTree = "<group>"; };
 		A036AE29204C50BE00EA34CF /* TMDBTalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTalker.swift; sourceTree = "<group>"; };
 		A036AE2B204C570100EA34CF /* MovieListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListController.swift; sourceTree = "<group>"; };
+		A036AE30204C84BE00EA34CF /* poster-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poster-placeholder.png"; sourceTree = "<group>"; };
 		A04745FA77A9834567552201 /* Pods-TMD CatalogueUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMD CatalogueUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMD CatalogueUITests/Pods-TMD CatalogueUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A418C88FC75136EB244401BA /* Pods-TMD Catalogue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMD Catalogue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMD Catalogue/Pods-TMD Catalogue.debug.xcconfig"; sourceTree = "<group>"; };
 		A78DE684CB276FE4924EFA3E /* Pods_TMD_Catalogue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMD_Catalogue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 		A036ADCC204B328600EA34CF /* TMD Catalogue */ = {
 			isa = PBXGroup;
 			children = (
+				A036AE2F204C84A700EA34CF /* Resources */,
 				A036AE26204BBBB700EA34CF /* Helpers */,
 				A036AE1D204BA70400EA34CF /* Network */,
 				A036AE07204B4B8300EA34CF /* Base */,
@@ -219,6 +222,14 @@
 				A036AE27204BBBCB00EA34CF /* Decodables.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A036AE2F204C84A700EA34CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A036AE30204C84BE00EA34CF /* poster-placeholder.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E47AB16CD606FE7D4340F7D3 /* Pods */ = {
@@ -362,6 +373,7 @@
 			files = (
 				A036AE12204B56E700EA34CF /* Info.plist in Resources */,
 				A036ADDA204B328600EA34CF /* LaunchScreen.storyboard in Resources */,
+				A036AE31204C84BE00EA34CF /* poster-placeholder.png in Resources */,
 				A036ADD7204B328600EA34CF /* Assets.xcassets in Resources */,
 				A036ADD5204B328600EA34CF /* Main.storyboard in Resources */,
 			);

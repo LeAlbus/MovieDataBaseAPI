@@ -16,4 +16,6 @@ let apiKey = "d02a501c462f6d6fdb8d9b2160cf9243"
 //Endpoints
 let topRated = "top_rated"
 let popular = "popular"
-
+let genreList = "genre/movie/list"
+let genre = "/genre/"
+let movies = "/movies"

@@ -11,9 +11,14 @@ import Alamofire
 
 class TMDBTalker{
     
+    static let sharedInstance = TMDBTalker()
+    var isGettingData = false
+    
     func requestMovieList(_ listTitle: String, resultPage: Int = 1, successHandler: @escaping (_ successObject: BaseListResponse?) -> ()){
         
-        Alamofire.request("\(baseURL+popular)", parameters: ["api_key": apiKey]).responseJSON { response in
+        isGettingData = true
+
+        Alamofire.request("\(baseURL+popular)", parameters: ["api_key": apiKey, "page": resultPage]).responseJSON { response in
             switch response.result {
             case .success:
                 do{
@@ -23,22 +28,30 @@ class TMDBTalker{
                     let responseList = try JSONDecoder().decode(BaseListResponse.self, from: data!)
                     
                     successHandler(responseList)
+                    self.isGettingData = false
                     
                 } catch let error{
                     print ("Error while parsing response")
                     print(error)
                     successHandler(nil)
+                    self.isGettingData = false
 
                 }
             case .failure(_):
                 print ("Failed to get movie list from url")
                 successHandler(nil)
+                self.isGettingData = false
 
             }
             
         }
     
     }
+    
+//    func requestGenreList(successHandler: @escaping (_ successObject: BaseListResponse?) -> ()){
+//
+//
+//    }
     
     
 }
