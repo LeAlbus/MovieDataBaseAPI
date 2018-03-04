@@ -5,6 +5,7 @@ platform :ios, '10.0'
 target 'TMD Catalogue' do
 
     pod 'Alamofire', '~> 4.5'
+    pod 'AlamofireImage', '~> 3.3'
 
 
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks

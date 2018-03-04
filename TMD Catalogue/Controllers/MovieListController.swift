@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AlamofireImage
 import UIKit
 
 class MovieListController: UITableViewController{
@@ -39,6 +40,10 @@ class MovieListController: UITableViewController{
             let description = movieForCell.overview
             let year = movieForCell.releaseDate.prefix(4)
             let rating = movieForCell.rating
+            
+            let posterPath = "\(posterURL)\(movieForCell.imagePath)"
+            print (posterPath)
+            cell.moviePoster.af_setImage(withURL: URL(string: posterPath)!)
             
             cell.movieDescriptionLabel.text = String(description)
             cell.yearLabel.text = String(year)
