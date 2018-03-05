@@ -12,15 +12,11 @@ import UIKit
 
 class MovieCell: UITableViewCell{
     
+    var movieInfo: Movie?
     
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var movieDescriptionLabel: UILabel!
     
-    func setMoviePoster(){
-
-        
-       
-    }
 }

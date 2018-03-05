@@ -46,6 +46,16 @@ class MovieListController: UITableViewController{
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell: MovieCell = self.tableView.cellForRow(at: indexPath) as! MovieCell
+
+        let movieDetail = navigationController?.storyboard?.instantiateViewController(withIdentifier: "MovieDetailView") as? MovieDetailViewController
+       
+        movieDetail?.movieInfo = cell.movieInfo
+        
+    self.navigationController?.pushViewController(movieDetail!, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: MovieCell = self.tableView.dequeueReusableCell(withIdentifier: "movieCell") as! MovieCell
@@ -53,6 +63,8 @@ class MovieListController: UITableViewController{
         if !currentMovies.isEmpty{
             
             let movieForCell = currentMovies[indexPath.row]
+            
+            cell.movieInfo = movieForCell
             
             let description = movieForCell.overview
             let year = movieForCell.releaseDate.prefix(4)

@@ -10,6 +10,7 @@ import Foundation
 
 struct Movie: Decodable{
     
+    let id: Int
     let imagePath: String
     let title: String
     let rating: Double
@@ -17,6 +18,7 @@ struct Movie: Decodable{
     let overview: String
     
     private enum CodingKeys: String, CodingKey{
+        case id = "id"
         case imagePath = "poster_path"
         case title = "title"
         case rating = "vote_average"

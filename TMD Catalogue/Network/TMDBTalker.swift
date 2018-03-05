@@ -22,10 +22,9 @@ class TMDBTalker{
         
         if genreID != -1{
             urlToRequest = "\(baseURL+genre+String(genreID)+movies)"
-            print("\(baseMovieURL+genre+String(genreID)+movies)")
         }
 
-        Alamofire.request(urlToRequest, parameters: ["api_key": apiKey, "page": resultPage]).responseJSON { response in print (response)
+        Alamofire.request(urlToRequest, parameters: ["api_key": apiKey, "page": resultPage]).responseJSON { response in 
             switch response.result {
             case .success:
                 do{
@@ -86,5 +85,16 @@ class TMDBTalker{
         }
     }
     
+    func requestMovieCasts(_ movieID: Int){
+        
+        //let castURL =
+        
+        print( "\(baseMovieURL+String(movieID)+casts)")
+     
+        Alamofire.request("\(baseMovieURL+String(movieID)+casts)", parameters: ["api_key": apiKey]).responseJSON { response in
+            print (response)
+        }
+
+    }
     
 }
