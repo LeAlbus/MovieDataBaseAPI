@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="4Jq-jA-hOF">
                         <barButtonItem key="rightBarButtonItem" title="Geners" id="ofX-CS-UPn">
                             <connections>
-                                <segue destination="FDp-Iq-4dc" kind="presentation" id="TVQ-8I-29Z"/>
+                                <segue destination="QVM-dN-bPx" kind="presentation" id="TVQ-8I-29Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -115,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUa-53-g2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="574.36281859070471"/>
+            <point key="canvasLocation" x="1569" y="555"/>
         </scene>
         <!--Genre View Controller-->
         <scene sceneID="rD3-fr-mBT">
@@ -156,9 +156,21 @@
                             <outlet property="delegate" destination="FDp-Iq-4dc" id="Ucf-co-13b"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="AAb-xu-QgH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JdI-Jb-QA4">
+                            <connections>
+                                <action selector="cancelGenderSelection:" destination="FDp-Iq-4dc" id="Ycp-3k-m7r"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="None" id="YQ6-BL-aVR">
+                            <connections>
+                                <action selector="selectNoGenre:" destination="FDp-Iq-4dc" id="yHb-Rb-d3L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="769" y="1274"/>
+            <point key="canvasLocation" x="1569" y="1315"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3hb-k6-HEI">
@@ -177,6 +189,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bM5-tP-ko9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="555"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gzC-oO-Aif">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QVM-dN-bPx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4SY-gi-ddn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FDp-Iq-4dc" kind="relationship" relationship="rootViewController" id="8hl-Lp-hCz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKP-Eb-kt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="1315"/>
         </scene>
     </scenes>
 </document>

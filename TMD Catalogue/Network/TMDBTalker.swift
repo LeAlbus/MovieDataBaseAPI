@@ -14,11 +14,18 @@ class TMDBTalker{
     static let sharedInstance = TMDBTalker()
     var isGettingData = false
     
-    func requestMovieList(_ listTitle: String, resultPage: Int = 1, successHandler: @escaping (_ successObject: BaseListResponse?) -> ()){
+    func requestMovieList(genreID: Int = -1, resultPage: Int = 1, successHandler: @escaping (_ successObject: BaseListResponse?) -> ()){
         
         isGettingData = true
+        
+        var urlToRequest = "\(baseMovieURL+popular)"
+        
+        if genreID != -1{
+            urlToRequest = "\(baseURL+genre+String(genreID)+movies)"
+            print("\(baseMovieURL+genre+String(genreID)+movies)")
+        }
 
-        Alamofire.request("\(baseMovieURL+popular)", parameters: ["api_key": apiKey, "page": resultPage]).responseJSON { response in
+        Alamofire.request(urlToRequest, parameters: ["api_key": apiKey, "page": resultPage]).responseJSON { response in print (response)
             switch response.result {
             case .success:
                 do{

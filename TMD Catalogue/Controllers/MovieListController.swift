@@ -14,12 +14,22 @@ class MovieListController: UITableViewController{
     
     var currentMovies: [Movie] = []
     var loadedPages = 1
+    var currentGenreID = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        NotificationCenter.default.addObserver(self, selector: #selector(self.selectNewListWithGenre(_:)), name:NSNotification.Name(rawValue: "genreSelected"), object: nil)
 
-        TMDBTalker.sharedInstance.requestMovieList(popular) { response in
+        
+        self.getListValues(forGenre: -1) //-1 for no genre
+    }
+    
+    func getListValues(forGenre: Int){
+        
+        self.currentGenreID = forGenre
+        
+        TMDBTalker.sharedInstance.requestMovieList(genreID: forGenre) { response in
             
             if let movieList = response?.results{
                 
@@ -29,6 +39,12 @@ class MovieListController: UITableViewController{
         }
     }
     
+    @objc func selectNewListWithGenre(_ notification: NSNotification){
+        
+        if let id: Int = notification.userInfo!["id"] as? Int{
+                self.getListValues(forGenre: id)
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -67,10 +83,10 @@ class MovieListController: UITableViewController{
         if ((scrollOffset + scrollViewHeight) - 20 >= scrollContentSizeHeight && !TMDBTalker.sharedInstance.isGettingData)
         {
             self.loadedPages += 1
-            TMDBTalker.sharedInstance.requestMovieList(popular, resultPage: loadedPages) { response in
+            TMDBTalker.sharedInstance.requestMovieList(genreID: self.currentGenreID, resultPage: loadedPages) { response in
                 
                 if let movieList = response?.results{
-                    print (self.loadedPages)
+
                     self.currentMovies.append(contentsOf: movieList)
                     self.tableView.reloadData()
                 }
