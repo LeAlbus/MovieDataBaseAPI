@@ -14,6 +14,7 @@ class MovieDetailViewController: UIViewController{
    
     
     
+    @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var movieOverview: UILabel!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieScore: UILabel!
@@ -34,13 +35,10 @@ class MovieDetailViewController: UIViewController{
         self.castCollection.delegate = CastCollectionViewController.sharedInstance
         self.castCollection.dataSource = CastCollectionViewController.sharedInstance
         self.showMovieInfo()
-
-        //self.scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height+100)
-
-      // self.contentView.sizeToFit()
-
-        //self.scrollView.contentSize = CGSizemake
-        //self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 12093)
+        
+        self.contentView.backgroundColor = UIColor(red: 2/255, green: 29/255, blue: 38/255, alpha: 1)
+        
+        self.frameView.backgroundColor = UIColor(red: 32/255, green: 36/255, blue: 70/255, alpha: 1)
 
     }
     
@@ -57,7 +55,7 @@ class MovieDetailViewController: UIViewController{
         for view in self.contentView.subviews {
             contentRect = contentRect.union(view.frame)
         }
-        //self.contentView.frame = contentRect.size
+
         self.contentView.frame = CGRect(x: 0, y: 0, width: self.contentView.frame.width, height: contentRect.height)
 
        
@@ -76,6 +74,7 @@ class MovieDetailViewController: UIViewController{
         self.movieScore.text = movieInfo?.rating.description
         self.movieReleaseDate.text = movieInfo?.releaseDate
         self.movieOverview.text = movieInfo?.overview
+       
         self.movieBanner.image = UIImage(named: "PlaceholderPoster")!
         TMDBTalker.sharedInstance.requestMovieImage(movieID: (movieInfo?.id)!){imagePath in
 

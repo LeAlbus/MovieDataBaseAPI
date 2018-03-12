@@ -78,6 +78,14 @@ class MovieListController: UITableViewController{
             cell.movieDescriptionLabel.text = String(description)
             cell.yearLabel.text = String(year)
             cell.ratingLabel.text = String(rating)
+            
+            if indexPath.row % 2 == 0{
+                
+                cell.backgroundColor = UIColor(red: 32/255, green: 36/255, blue: 70/255, alpha: 1)
+            } else {
+                cell.backgroundColor = UIColor(red: 2/255, green: 29/255, blue: 38/255, alpha: 1)
+
+            }
         }
         return cell
     }
