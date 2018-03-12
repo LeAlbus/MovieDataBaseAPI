@@ -272,28 +272,28 @@
                                                     <constraint firstAttribute="height" constant="270" id="Puh-0y-LZF"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lck-k2-Phi">
-                                                    <size key="itemSize" width="120" height="226"/>
+                                                    <size key="itemSize" width="170" height="226"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="castCell" id="Wor-IC-uZr" customClass="CastCell" customModule="TMD_Catalogue" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="22" width="120" height="226"/>
+                                                        <rect key="frame" x="0.0" y="22" width="170" height="226"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="226"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="170" height="226"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="SE6-kZ-b7v">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                                                                    <rect key="frame" x="25" y="0.0" width="120" height="180"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="180" id="cn5-uG-j1Z"/>
                                                                         <constraint firstAttribute="width" constant="120" id="u2t-mh-3US"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAT-36-xDU">
-                                                                    <rect key="frame" x="8" y="185" width="104" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAT-36-xDU">
+                                                                    <rect key="frame" x="0.0" y="185" width="170" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -301,9 +301,9 @@
                                                             </subviews>
                                                         </view>
                                                         <constraints>
-                                                            <constraint firstItem="fAT-36-xDU" firstAttribute="leading" secondItem="Wor-IC-uZr" secondAttribute="leadingMargin" id="58L-kA-RLc"/>
-                                                            <constraint firstItem="SE6-kZ-b7v" firstAttribute="leading" secondItem="Wor-IC-uZr" secondAttribute="leading" id="BEq-JX-ag9"/>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="fAT-36-xDU" secondAttribute="trailing" id="b6C-By-qmf"/>
+                                                            <constraint firstItem="fAT-36-xDU" firstAttribute="width" secondItem="Wor-IC-uZr" secondAttribute="width" id="CKx-Kq-CMo"/>
+                                                            <constraint firstItem="SE6-kZ-b7v" firstAttribute="centerX" secondItem="Wor-IC-uZr" secondAttribute="centerX" id="F1U-31-YA7"/>
+                                                            <constraint firstItem="fAT-36-xDU" firstAttribute="centerX" secondItem="Wor-IC-uZr" secondAttribute="centerX" id="Rm7-W1-RtI"/>
                                                             <constraint firstItem="SE6-kZ-b7v" firstAttribute="top" secondItem="Wor-IC-uZr" secondAttribute="top" id="fMD-zP-AOw"/>
                                                             <constraint firstItem="fAT-36-xDU" firstAttribute="top" secondItem="SE6-kZ-b7v" secondAttribute="bottom" constant="5" id="w8S-fJ-edr"/>
                                                         </constraints>

@@ -77,18 +77,24 @@ class MovieDetailViewController: UIViewController{
         self.movieReleaseDate.text = movieInfo?.releaseDate
         self.movieOverview.text = movieInfo?.overview
         
-        TMDBTalker.sharedInstance.requestMovieCasts((movieInfo?.id)!)
+        TMDBTalker.sharedInstance.requestMovieCasts(movieID: (movieInfo?.id)!){ cast in
+            if cast != nil{
+                print (cast)
+                self.setCastData(cast!)
+
+            } else{
+                 print ("No cast found")
+            }
+        }
         
         self.loadImage()
         
-        self.setCastData()
         self.resizeScrollView()
     }
     
-    func setCastData(){
+    func setCastData(_ cast: [CastBaseData]){
         
-        //self.castCollection()
+        CastCollectionViewController.sharedInstance.setCastData(cast)
         self.castCollection.reloadData()
-        self.castCollection.sizeToFit()
     }
 }

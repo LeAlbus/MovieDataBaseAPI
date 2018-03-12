@@ -36,6 +36,16 @@ struct GenreList: Decodable{
     }
 }
 
+struct CastList: Decodable{
+    
+    let cast: [CastBaseData]
+    
+    private enum CodingKeys: String, CodingKey{
+        case cast = "cast"
+    }
+}
+
+
 struct Genre: Decodable{
     
     let id: Int
@@ -59,5 +69,18 @@ struct BaseListResponse: Decodable{
         case results = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"
+    }
+}
+
+struct CastBaseData: Decodable{
+    
+    let name: String
+    let character: String
+    let profilePic: String?
+    
+    private enum CodingKeys: String, CodingKey{
+        case name = "name"
+        case character = "character"
+        case profilePic = "profile_path"
     }
 }
