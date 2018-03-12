@@ -13,10 +13,13 @@ import UIKit
 class MovieDetailViewController: UIViewController{
    
     
+    
     @IBOutlet weak var movieOverview: UILabel!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieScore: UILabel!
     @IBOutlet weak var movieReleaseDate: UILabel!
+    @IBOutlet weak var castCollection: UICollectionView!
+    @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -27,7 +30,17 @@ class MovieDetailViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.castCollection.delegate = CastCollectionViewController.sharedInstance
+        self.castCollection.dataSource = CastCollectionViewController.sharedInstance
         self.showMovieInfo()
+
+        //self.scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height+100)
+
+      // self.contentView.sizeToFit()
+
+        //self.scrollView.contentSize = CGSizemake
+        //self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 12093)
 
     }
     
@@ -36,6 +49,20 @@ class MovieDetailViewController: UIViewController{
         
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    func resizeScrollView(){
+        var contentRect = CGRect.zero
+
+        for view in self.contentView.subviews {
+            contentRect = contentRect.union(view.frame)
+        }
+        //self.contentView.frame = contentRect.size
+        self.contentView.frame = CGRect(x: 0, y: 0, width: self.contentView.frame.width, height: contentRect.height)
+
+       
+    }
+    
     func loadImage(){
         let placeholderImage = UIImage(named: "PlaceholderPoster")!
         let posterPath: String = (self.movieInfo?.imagePath)!
@@ -53,5 +80,15 @@ class MovieDetailViewController: UIViewController{
         TMDBTalker.sharedInstance.requestMovieCasts((movieInfo?.id)!)
         
         self.loadImage()
+        
+        self.setCastData()
+        self.resizeScrollView()
+    }
+    
+    func setCastData(){
+        
+        //self.castCollection()
+        self.castCollection.reloadData()
+        self.castCollection.sizeToFit()
     }
 }
