@@ -76,10 +76,21 @@ class MovieDetailViewController: UIViewController{
         self.movieScore.text = movieInfo?.rating.description
         self.movieReleaseDate.text = movieInfo?.releaseDate
         self.movieOverview.text = movieInfo?.overview
+        self.movieBanner.image = UIImage(named: "PlaceholderPoster")!
+        TMDBTalker.sharedInstance.requestMovieImage(movieID: (movieInfo?.id)!){imagePath in
+
+            let path: String = imagePath?.filePath as! String
+
+            let movieBannerURL = "\(posterURL)\(path)"
+            let placeholderImage = UIImage(named: "PlaceholderPoster")!
+
+            self.movieBanner.af_setImage(withURL: URL(string: movieBannerURL)!, placeholderImage: placeholderImage)
+            
+        }
         
         TMDBTalker.sharedInstance.requestMovieCasts(movieID: (movieInfo?.id)!){ cast in
             if cast != nil{
-                print (cast)
+
                 self.setCastData(cast!)
 
             } else{

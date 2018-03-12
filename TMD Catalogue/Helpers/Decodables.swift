@@ -45,6 +45,15 @@ struct CastList: Decodable{
     }
 }
 
+struct ImageList: Decodable{
+    
+    let image: [ImagePath]
+    
+    private enum CodingKeys: String, CodingKey{
+        case image = "backdrops"
+    }
+}
+
 
 struct Genre: Decodable{
     
@@ -69,6 +78,16 @@ struct BaseListResponse: Decodable{
         case results = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"
+    }
+}
+
+struct ImagePath: Decodable{
+    
+    let filePath: String
+    
+    private enum CodingKeys: String, CodingKey{
+        case filePath = "file_path"
+
     }
 }
 

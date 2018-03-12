@@ -82,10 +82,43 @@ class TMDBTalker{
         }
     }
     
+    func requestMovieImage(movieID: Int, successHandler: @escaping (_ successObject: ImagePath?) -> ()){
+         Alamofire.request("\(baseMovieURL+String(movieID)+images)", parameters: ["api_key": apiKey]).responseJSON { response in
+                
+                switch response.result {
+                case .success:
+                    do{
+                        
+                        let data = response.data
+                        
+                        let responseList = try JSONDecoder().decode(ImageList.self, from: data!)
+                        
+                        successHandler(responseList.image[0])
+                        self.isGettingData = false
+                        
+                    }catch let error{
+                        print ("Error while parsing response")
+                        print(error)
+                        successHandler(nil)
+                        self.isGettingData = false
+                        
+                    }
+                case .failure(_):
+                    print ("Failed to get image list from url")
+                    successHandler(nil)
+                    self.isGettingData = false
+                    
+            }
+        }
+        
+    }
+        
+    
+    
     func requestMovieCasts(movieID: Int, successHandler: @escaping (_ successObject: [CastBaseData]?) -> ()){
         
         Alamofire.request("\(baseMovieURL+String(movieID)+casts)", parameters: ["api_key": apiKey]).responseJSON { response in
-            print (response)
+
             switch response.result {
             case .success:
                 do{
