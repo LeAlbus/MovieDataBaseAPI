@@ -31,7 +31,7 @@
                         <viewLayoutGuide key="safeArea" id="Es9-Fx-0pK"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Jq-jA-hOF">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Geners" id="ofX-CS-UPn">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title=" " id="ofX-CS-UPn">
                             <connections>
                                 <segue destination="QVM-dN-bPx" kind="presentation" id="TVQ-8I-29Z"/>
                             </connections>

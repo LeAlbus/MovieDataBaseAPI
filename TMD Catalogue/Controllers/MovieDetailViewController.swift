@@ -39,7 +39,10 @@ class MovieDetailViewController: UIViewController{
         self.contentView.backgroundColor = UIColor(red: 2/255, green: 29/255, blue: 38/255, alpha: 1)
         
         self.frameView.backgroundColor = UIColor(red: 32/255, green: 36/255, blue: 70/255, alpha: 1)
+        
+        self.castCollection.backgroundColor = UIColor(red: 32/255, green: 36/255, blue: 70/255, alpha: 1)
 
+        self.view.backgroundColor = UIColor(red: 2/255, green: 29/255, blue: 38/255, alpha: 1)
     }
     
     @IBAction func backButton(_ sender: Any) {

@@ -19,6 +19,7 @@ class CastCell: UICollectionViewCell{
     
     func setActorData(name: String, character: String, imagePath: String){
         
+        self.castName.textColor = UIColor.white
         self.castName.text = "\(name) as \(character)"
         self.castName.sizeToFit()
         let placeholderImage = UIImage(named: "PlaceholderPoster")!

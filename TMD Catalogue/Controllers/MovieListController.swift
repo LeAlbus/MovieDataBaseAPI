@@ -21,7 +21,8 @@ class MovieListController: UITableViewController{
         self.tableView.rowHeight = UITableViewAutomaticDimension
         NotificationCenter.default.addObserver(self, selector: #selector(self.selectNewListWithGenre(_:)), name:NSNotification.Name(rawValue: "genreSelected"), object: nil)
 
-        
+        self.view.backgroundColor = UIColor(red: 2/255, green: 29/255, blue: 38/255, alpha: 1)
+
         self.getListValues(forGenre: -1) //-1 for no genre
     }
     
