@@ -15,7 +15,6 @@
 		A036ADDA204B328600EA34CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A036ADD8204B328600EA34CF /* LaunchScreen.storyboard */; };
 		A036ADE5204B328600EA34CF /* TMD_CatalogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036ADE4204B328600EA34CF /* TMD_CatalogueTests.swift */; };
 		A036ADF0204B328600EA34CF /* TMD_CatalogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036ADEF204B328600EA34CF /* TMD_CatalogueUITests.swift */; };
-		A036AE04204B4B3B00EA34CF /* GenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE03204B4B3B00EA34CF /* GenreViewController.swift */; };
 		A036AE12204B56E700EA34CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036ADDB204B328600EA34CF /* Info.plist */; };
 		A036AE19204B994600EA34CF /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE18204B994600EA34CF /* MovieCell.swift */; };
 		A036AE21204BB06400EA34CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036AE20204BB06400EA34CF /* Constants.swift */; };
@@ -64,7 +63,6 @@
 		A036ADEB204B328600EA34CF /* TMD CatalogueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMD CatalogueUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A036ADEF204B328600EA34CF /* TMD_CatalogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMD_CatalogueUITests.swift; sourceTree = "<group>"; };
 		A036ADF1204B328600EA34CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A036AE03204B4B3B00EA34CF /* GenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewController.swift; sourceTree = "<group>"; };
 		A036AE18204B994600EA34CF /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		A036AE20204BB06400EA34CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A036AE27204BBBCB00EA34CF /* Decodables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodables.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 			children = (
 				A036AE15204B98E300EA34CF /* Cells */,
 				A036AE3A204CEF1700EA34CF /* MovieDetailViewController.swift */,
-				A036AE03204B4B3B00EA34CF /* GenreViewController.swift */,
 				A036AE2B204C570100EA34CF /* MovieListController.swift */,
 				A036AE422054BB0F00EA34CF /* CastCollectionViewController.swift */,
 			);
@@ -546,7 +543,6 @@
 				A036AE2A204C50BE00EA34CF /* TMDBTalker.swift in Sources */,
 				A036AE45205521B500EA34CF /* CastCell.swift in Sources */,
 				A036AE3B204CEF1700EA34CF /* MovieDetailViewController.swift in Sources */,
-				A036AE04204B4B3B00EA34CF /* GenreViewController.swift in Sources */,
 				A036ADCE204B328600EA34CF /* AppDelegate.swift in Sources */,
 				A036AE2C204C570100EA34CF /* MovieListController.swift in Sources */,
 				A036AE21204BB06400EA34CF /* Constants.swift in Sources */,
